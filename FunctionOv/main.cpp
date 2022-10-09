@@ -1,4 +1,4 @@
-#pragma warning(disable:4326)
+ï»¿#pragma warning(disable:4326)
 #include <iostream>
 #include <stdlib.h>
 
@@ -84,17 +84,17 @@ void main()
 	int brr[ROWS][COLS];
 	FillRand(brr, ROWS, COLS);
 	Print(brr, ROWS, COLS);
-	cout << "Ââåäèòå êîëè÷åñòâî ñäâèãîâ: "; cin >> number_of_shifts;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð²: "; cin >> number_of_shifts;
 	shiftLeft(brr, ROWS, COLS, number_of_shifts);
 	Print(brr, ROWS, COLS); 
 
 	/*FillRand(arr, n); 
 	Print(arr, n);
-	cout << "Ñóììà: " << Sum(arr, n) << endl;
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå: " << Avg(arr, n) << endl;
-	cout << "Ìèíèìàëüíîå çíà÷åíèå â ìàññèâå: " << minValueIn(arr, n) << endl;
-	cout << "Ìàêñèìàëüíîå çíà÷åíèå â ìàññèâå: " << maxValueIn(arr, n) << endl;
-	cout << "Ââåäèòå êîëè÷åñòâî ñäâèãîâ: "; cin >> number_of_shifts;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð°: " << Sum(arr, n) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ: " << Avg(arr, n) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ: " << minValueIn(arr, n) << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¼Ð°ÑÑÐ¸Ð²Ðµ: " << maxValueIn(arr, n) << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð²: "; cin >> number_of_shifts;
 	shiftLeft(arr, n, number_of_shifts);
 	Print(arr, n);
 	
@@ -501,7 +501,7 @@ double maxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS)
 
 void shiftLeft(int arr[], const int n, int number_of_shifts)
 {
-	for (int i = 0; i < number_of_shifts; i++) //ÀÀÀÀÀÀ, ñíà÷àëà íå ïîíÿë, à ïîòîì êàê ïîíÿë
+	for (int i = 0; i < number_of_shifts; i++) //ÐÐÐÐÐÐ, ÑÐ½Ð°Ñ‡Ð°Ð»Ð° Ð½Ðµ Ð¿Ð¾Ð½ÑÐ», Ð° Ð¿Ð¾Ñ‚Ð¾Ð¼ ÐºÐ°Ðº Ð¿Ð¾Ð½ÑÐ»
 	{
 		int buffer = arr[0];
 		for (int i = 0; i < n; i++)
@@ -525,7 +525,7 @@ void shiftLeft(float arr[], const int n, int number_of_shifts)
 }
 void shiftLeft(double arr[], const int n, int number_of_shifts)
 {
-	for (int i = 0; i < number_of_shifts; i++) //ïîâòîðÿåò ñäâèã ìàññèâà íà 1 ýëåìåíò
+	for (int i = 0; i < number_of_shifts; i++) //Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÐµÑ‚ ÑÐ´Ð²Ð¸Ð³ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð½Ð° 1 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
 	{
 		double buffer = arr[0];
 		for (int i = 0; i < n; i++)
@@ -537,7 +537,7 @@ void shiftLeft(double arr[], const int n, int number_of_shifts)
 }
 void shiftLeft(char arr[], const int n, int number_of_shifts)
 {
-	for (int i = 0; i < number_of_shifts; i++) //ïîâòîðÿåò ñäâèã ìàññèâà íà 1 ýëåìåíò
+	for (int i = 0; i < number_of_shifts; i++) //Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÐµÑ‚ ÑÐ´Ð²Ð¸Ð³ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð½Ð° 1 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
 	{
 		char buffer = arr[0];
 		for (int i = 0; i < n; i++)
