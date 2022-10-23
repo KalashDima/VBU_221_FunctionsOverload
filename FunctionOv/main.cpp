@@ -57,23 +57,23 @@ void shiftLeft(float arr[], const int n, int number_of_shifts);
 void shiftLeft(double arr[], const int n, int number_of_shifts);
 void shiftLeft(char arr[], const int n, int number_of_shifts);
 void shiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
-//void shiftLeft(float arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
-//void shiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
-//void shiftLeft(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
+void shiftLeft(float arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
+void shiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
+void shiftLeft(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
 void shiftRight(int arr[], const int n, int number_of_shifts);
 void shiftRight(float arr[], const int n, int number_of_shifts);
 void shiftRight(double arr[], const int n, int number_of_shifts);
 void shiftRight(char arr[], const int n, int number_of_shifts);
-//void shiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
-//void shiftRight(float arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
-//void shiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
-//void shiftRight(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
+void shiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
+void shiftRight(float arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
+void shiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
+void shiftRight(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
 void Sort(int arr[], const int n);
 void Sort(float arr[], const int n);
 void Sort(double arr[], const int n);
-//void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(float arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void Sort(float arr[ROWS][COLS], const int ROWS, const int COLS);
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void main()
 {
@@ -88,34 +88,7 @@ void main()
 	shiftLeft(brr, ROWS, COLS, number_of_shifts);
 	Print(brr, ROWS, COLS); 
 
-	/*FillRand(arr, n); 
-	Print(arr, n);
-	cout << "Сумма: " << Sum(arr, n) << endl;
-	cout << "Среднее арифметическое: " << Avg(arr, n) << endl;
-	cout << "Минимальное значение в массиве: " << minValueIn(arr, n) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(arr, n) << endl;
-	cout << "Введите количество сдвигов: "; cin >> number_of_shifts;
-	shiftLeft(arr, n, number_of_shifts);
-	Print(arr, n);
 	
-	shiftRight(arr, n, number_of_shifts);
-	Print(arr, n);
-	Sort(arr, n);
-	Print(arr, n);
-
-	const int SIZE = 8;
-	int brr[SIZE];
-	FillRand(brr, SIZE);
-	Print(brr, SIZE);
-
-	const int D_SIZE = 5;
-	double d_arr[D_SIZE];
-	FillRand(d_arr, D_SIZE);
-	Print(d_arr, D_SIZE);
-
-	int i_arr_2[ROWS][COLS];
-	FillRand(i_arr_2, ROWS, COLS);
-	Print(i_arr_2, ROWS, COLS);*/
 
 }
 void FillRand(int arr[], const int n)
@@ -501,7 +474,7 @@ double maxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS)
 
 void shiftLeft(int arr[], const int n, int number_of_shifts)
 {
-	for (int i = 0; i < number_of_shifts; i++) //АААААА, сначала не понял, а потом как понял
+	for (int i = 0; i < number_of_shifts; i++)
 	{
 		int buffer = arr[0];
 		for (int i = 0; i < n; i++)
@@ -525,7 +498,7 @@ void shiftLeft(float arr[], const int n, int number_of_shifts)
 }
 void shiftLeft(double arr[], const int n, int number_of_shifts)
 {
-	for (int i = 0; i < number_of_shifts; i++) //повторяет сдвиг массива на 1 элемент
+	for (int i = 0; i < number_of_shifts; i++)
 	{
 		double buffer = arr[0];
 		for (int i = 0; i < n; i++)
@@ -537,7 +510,7 @@ void shiftLeft(double arr[], const int n, int number_of_shifts)
 }
 void shiftLeft(char arr[], const int n, int number_of_shifts)
 {
-	for (int i = 0; i < number_of_shifts; i++) //повторяет сдвиг массива на 1 элемент
+	for (int i = 0; i < number_of_shifts; i++)
 	{
 		char buffer = arr[0];
 		for (int i = 0; i < n; i++)
@@ -551,29 +524,20 @@ void shiftLeft(char arr[], const int n, int number_of_shifts)
 void shiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
 {
 	shiftLeft(arr[0], ROWS * COLS, number_of_shifts);
-	//for (int k = 0; k < number_of_shifts; k++)
-	//{
-	//	int temp = 0;
-	//	for (int i = 0; i < ROWS; i++)
-	//	{
-	//	    int buffer = arr[i][0];
-	//		for (int j = 0; j < COLS; j++)
-	//		{
-	//			arr[i][j] = arr[i][j + 1];
-	//			/*if (i - 1 == temp && j == 0 && i - 1 >= 0)
-	//			{
-	//				arr[i - 1][COLS - 1] = arr[i][j];
-	//				--i;
-	//				++temp;
-	//			}
-	//			else 
-	//			{
-	//			}*/
-	//		}
-	//		arr[i][COLS - 1] = buffer;
-	//	}
-	//}
 }
+void shiftLeft(float arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
+{
+	shiftLeft(arr[0], ROWS * COLS, number_of_shifts);
+}
+void shiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
+{
+	shiftLeft(arr[0], ROWS * COLS, number_of_shifts);
+}
+void shiftLeft(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
+{
+	shiftLeft(arr[0], ROWS * COLS, number_of_shifts);
+}
+	
 
 void shiftRight(int arr[], const int n, int number_of_shifts)
 {
@@ -590,6 +554,23 @@ void shiftRight(double arr[], const int n, int number_of_shifts)
 void shiftRight(char arr[], const int n, int number_of_shifts)
 {
 	shiftLeft(arr, n, n - number_of_shifts);
+}
+
+void shiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
+{
+	shiftRight(arr[0], ROWS * COLS, number_of_shifts);
+}
+void shiftRight(float arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts) 
+{
+	shiftRight(arr[0], ROWS * COLS, number_of_shifts);
+}
+void shiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
+{
+	shiftRight(arr[0], ROWS * COLS, number_of_shifts);
+}
+void shiftRight(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
+{
+	shiftRight(arr[0], ROWS * COLS, number_of_shifts);
 }
 
 void Sort(int arr[], const int n)
@@ -637,13 +618,14 @@ void Sort(double arr[], const int n)
 		}
 	}
 }
+
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS*COLS; i++)
 	{
 		for (int j = i+1; j < ROWS*COLS; j++)
 		{
-			/*for (int k = 0; k < ROWS; k++)
+			for (int k = 0; k < ROWS; k++)
 			{
 				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
 				{
@@ -655,50 +637,56 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 					}
 				}
 
-			}*/
-			if (arr[0][j] < arr[0][i])
+			}
+			/*if (arr[0][j] < arr[0][i])
 			{
 				int buffer = arr[0][i];
 				arr[0][i] = arr[0][j];
 				arr[0][j] = buffer;
-			}
+			}*/
 		}
 		
 	}
 }
-//void shiftLeft(float arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
-//{
-//
-//}
-//void shiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
-//{
-//
-//}
-//void shiftRight(int arr[], const int n, int number_of_shifts)
-//{
-//	shiftLeft(arr, n, n - number_of_shifts);
-//}
-//void Sort(int arr[], const int n)
-//{
-//	for (int i = 0; i < n; i++)
-//	{
-//		for (int j = i + 1; j < n; j++)
-//		{
-//			if (arr[j] > arr[i])
-//			{
-//				int buffer = arr[i];
-//				arr[i] = arr[j];
-//				arr[j] = buffer;
-//			}
-//		}
-//	}
-//}
-
-
-//void shiftLeft(char arr[ROWS][COLS], const int ROWS, const int COLS);
-//void shiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS);
-//void shiftRight(float arr[ROWS][COLS], const int ROWS, const int COLS);
-//void shiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS);
-//void shiftRight(char arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(float arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
+void Sort(float arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS * COLS; i++)
+	{
+		for (int j = i + 1; j < ROWS * COLS; j++)
+		{
+			for (int k = 0; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
+				{
+					if (arr[k][l] < arr[i][j])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
+			}
+		}
+	}
+}
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS * COLS; i++)
+	{
+		for (int j = i + 1; j < ROWS * COLS; j++)
+		{
+			for (int k = 0; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
+				{
+					if (arr[k][l] < arr[i][j])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
+			}
+		}
+	}
+}
